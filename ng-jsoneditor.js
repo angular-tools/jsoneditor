@@ -65,6 +65,10 @@
                                     editor.setMode(v);
                                 } else if (k === 'name') {
                                     editor.setName(v);
+                                } else if (k === 'ace') {
+                                    // "ace" object cannot be compared, sorry
+                                } else if (k === 'modes' && angular.toJson(newValue[k]) === angular.toJson(oldValue[k])) {
+                                    // "modes" has not been changed
                                 } else { //other settings cannot be changed without re-creating the JsonEditor
                                     editor = _createEditor(newValue);
                                     $scope.updateJsonEditor();
