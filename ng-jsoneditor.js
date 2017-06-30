@@ -101,7 +101,7 @@
 
                 editor = _createEditor($scope.options);
 
-                if ($scope.options.hasOwnProperty('expanded')) {
+                if if ($scope.options && $scope.options.hasOwnProperty('expanded')) {
                     $timeout($scope.options.expanded ? function () {editor.expandAll()} : function () {editor.collapseAll()}, ($scope.options.timeout || 100) + 100);
                 }
 
