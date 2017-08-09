@@ -49,14 +49,14 @@ http://jsfiddle.net/angulartools/sd3at5ek/
 
 ## Local Demo
 
-Run `npm install` to install the local server, then `npm start` to start it. Then visit `http://http://localhost:1112/demo/`
+Run `npm install` to install the local server, then `npm start` to start it. Then visit `http://localhost:1112/demo/`
 
 ### Sample code
 
 ```javascript
 myAppModule.controller('MyController', [ '$scope', function($scope) {
   $scope.obj = {data: json, options: { mode: 'tree' }};
-  
+
   $scope.btnClick = function() {
     $scope.obj.options.mode = 'code'; //should switch you to code view
   }
