@@ -11,10 +11,12 @@
   },
   "scripts": {
     "start": "http-server -a localhost -p 1112",
+    "minify": "uglifyjs ng-jsoneditor.js -o ng-jsoneditor.min.js"
   },
   "description": "Angular version of the insanely cool jsoneditor",
   "devDependencies": {
     "http-server": "~0.8.0",
+    "uglify-js": "^3.0.27"
   },
   "directories": {},
   "homepage": "https://github.com/angular-tools/ng-jsoneditor",

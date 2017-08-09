@@ -103,6 +103,10 @@ myAppModule.controller('MyController', [ '$scope', function($scope) {
 }]);
 ```
 
+### Development
+
+To minify the source file, run `npm install` to install the *uglify-js* module, then run `npm run minify`
+
 ### Contributors
 
 - Sanchit Bhatnagar
