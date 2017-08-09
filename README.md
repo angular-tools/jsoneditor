@@ -47,6 +47,10 @@ Finally, add the directive to your html:
 
 http://jsfiddle.net/angulartools/sd3at5ek/
 
+## Local Demo
+
+Run `npm install` to install the local server, then `npm start` to start it. Then visit `http://http://localhost:1112/demo/`
+
 ### Sample code
 
 ```javascript
