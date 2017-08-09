@@ -21,7 +21,7 @@
                 function _createEditor(options) {
                     var settings = angular.extend({}, defaults, options);
                     var theOptions = angular.extend({}, settings, {
-                        change: function () {
+                        onChange: function () {
                             if (typeof debounceTo !== 'undefined') {
                                 $timeout.cancel(debounceTo);
                             }

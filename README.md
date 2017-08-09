@@ -47,12 +47,16 @@ Finally, add the directive to your html:
 
 http://jsfiddle.net/angulartools/sd3at5ek/
 
+## Local Demo
+
+Run `npm install` to install the local server, then `npm start` to start it. Then visit `http://localhost:1112/demo/`
+
 ### Sample code
 
 ```javascript
 myAppModule.controller('MyController', [ '$scope', function($scope) {
   $scope.obj = {data: json, options: { mode: 'tree' }};
-  
+
   $scope.btnClick = function() {
     $scope.obj.options.mode = 'code'; //should switch you to code view
   }
@@ -98,6 +102,10 @@ myAppModule.controller('MyController', [ '$scope', function($scope) {
 
 }]);
 ```
+
+### Development
+
+To minify the source file, run `npm install` to install the *uglify-js* module, then run `npm run minify`
 
 ### Contributors
 

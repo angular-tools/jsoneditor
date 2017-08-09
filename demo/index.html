@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>ng-jsoneditor demo</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jsoneditor/5.9.3/jsoneditor.min.css">
+
+</head>
+
+<body ng-app="app" ng-controller="pageCtrl">
+
+    <div ng-jsoneditor="onLoad" ng-model="obj.data" options="obj.options" style="width: 400px; height: 300px;"></div>
+
+    <button type="button" class="btn btn-primary" ng-click="changeData()"><i class="fa fa-check-circle"></i> change data</button>
+
+    <button type="button" class="btn btn-primary" ng-click="changeOptions()"><i class="fa fa-check-circle"></i> change options</button>
+
+    <pre>{{pretty(obj.data)}}</pre>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsoneditor/5.9.3/jsoneditor.min.js"></script>
+    <script src="../ng-jsoneditor.min.js"></script>
+    <script>
+
+        var json = {"Array": [1, 2, 3], "Boolean": true, "Null": null, "Number": 123, "Object": {"a": "b", "c": "d"}, "String": "Hello World"};
+
+        var app = angular.module('app', ['ng.jsoneditor']);
+
+        app.controller('pageCtrl', ['$scope', function ($scope) {
+
+            $scope.obj = {data: json, options: {mode: 'tree'}};
+            $scope.onLoad = function (instance) {
+                instance.expandAll();
+            };
+            $scope.changeData = function () {
+                $scope.obj.data = {foo: 'bar'};
+            };
+            $scope.changeOptions = function () {
+                $scope.obj.options.mode = $scope.obj.options.mode == 'tree' ? 'code' : 'tree';
+            };
+
+            //other
+            $scope.pretty = function (obj) {
+                return angular.toJson(obj, true);
+            }
+
+        }]);
+
+    </script>
+
+</body>
+</html>
