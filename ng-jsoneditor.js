@@ -21,7 +21,7 @@
                 function _createEditor(options) {
                     var settings = angular.extend({}, defaults, options);
                     var theOptions = angular.extend({}, settings, {
-                        change: function () {
+                        onChange: function () {
                             if (typeof debounceTo !== 'undefined') {
                                 $timeout.cancel(debounceTo);
                             }
@@ -36,8 +36,8 @@
                                         error = err;
                                     }
 
-                                    if (settings && settings.hasOwnProperty('change')) {
-                                        settings.change(error);
+                                    if (settings && settings.hasOwnProperty('onChange')) {
+                                        settings.onChange(error);
                                     }
                                 }
                             }, settings.timeout || 100);
