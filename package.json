@@ -27,5 +27,5 @@
     "type": "git",
     "url": "git+https://github.com/angular-tools/ng-jsoneditor.git"
   },
-  "version": "1.0.0"
+  "version": "1.0.1"
 }
